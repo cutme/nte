@@ -1,0 +1,155 @@
+<% include ./src/includes/head %>
+
+    <% include ./src/includes/top %>
+
+    <div class="o-container">
+        
+    <div class="c-product">
+        <div class="o-wrap">
+            <header class="o-header o-header--withback">
+                <h1>Mellemlæg / <span>Nazwa produktu</span></h1>
+                
+                <a href="javascript:history(-1)" class="back"><span>Tilbage</span></a>
+            </header>
+        </div>
+
+        <div class="o-section bg-gray">
+            <div class="o-wrap">
+                <div class="o-wrap">
+                    <article class="o-article">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris interdum mauris venenatis malesuada iaculis. Aliquam nulla velit, egestas ac sollicitudin id, luctus non urna. In eu dui rutrum mi faucibus efficitur. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc pharetra bibendum mauris vel vehicula. Morbi ultrices orci nibh, nec laoreet sem vulputate at.<br>
+    
+Praesent consectetur vitae leo a sodales. Nulla consectetur tortor nec mauris luctus, non pellentesque velit aliquet. Sed non ex placerat turpis placerat aliquet. Vestibulum sodales dignissim justo, in malesuada ex molestie et. Nullam at lectus ac felis tincidunt faucibus sit amet a lorem.</p>
+                    </article>
+                    
+                    
+                    <div class="o-cols o-cols--2">
+                        <div class="o-cols__item">
+                            
+                            <table class="c-product__details">
+                                <tr>
+                                    <th>Materiale:</th>
+                                    <td>træ - fyr eller gran</td>
+                                </tr>
+                                
+                                <tr>
+                                    <th>Varmebehandling:</th>
+                                    <td>IKKE</td>
+                                </tr>
+                                
+                                <tr>
+                                    <th>Leveringstid:</th>
+                                    <td>3-5 arbejdsdage</td>
+                                </tr>
+                            </table>
+                            
+                            
+                            <div class="c-orderform">
+                                <form action="#">
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <input type="text" placeholder="Fornavn">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <input type="email" placeholder="E-mail">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <input type="text" placeholder="Firmanavn">
+                                        </div>
+                                        
+                                        <div class="form-group form-group--select">
+                                            <select>
+                                                <option>Antal</option>
+                                                <option>Antal</option>
+                                                <option>Antal</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <textarea placeholder="Besked"></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-row form-row--submit">
+                                        <div class="form-group">
+                                            <a href="#" class="o-btn o-btn--medium o-btn--brown2">
+                                                 <i class="icon-folder-open"></i> <span>Tilføj en fil</span>
+                                            </a>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <button type="submit" class="o-btn o-btn--medium o-btn--green">
+                                                <i class="icon-file-o"></i> <span>Send forespørgsel</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        
+                        <div class="o-cols__item">
+                            
+                            <div class="c-preview">
+                                <div class="c-preview__big">
+                                    <a href=<%= require("./img/photos/product-01.jpg") %> class="js-image">
+                                        <i class="icon-search-plus"></i>
+                                        <img src=<%= require("./img/photos/product-01.jpg") %> alt="">
+                                    </a>
+                                </div>
+                                
+                                <div class="c-preview__thumbs">
+                                    
+                                    <div class="glide" id="thumbsCarousel">
+                                        <div class="glide__track" data-glide-el="track">
+                            
+                                            <ul class="glide__slides">
+                                                <li class="glide__slide">
+                                                    <a href=<%= require("./img/photos/product-01.jpg") %> class="o-box js-productThumb">
+                                                        <img src=<%= require("./img/photos/product-thumb-01.jpg") %> alt="">
+                                                    </a>
+                                                </li>
+                                                
+                                                <li class="glide__slide">
+                                                    <a href=<%= require("./img/photos/product-02.jpg") %> class="o-box js-productThumb">
+                                                        <img src=<%= require("./img/photos/product-thumb-02.jpg") %> alt="">
+                                                    </a>
+                                                </li>
+                                                
+                                                <li class="glide__slide">
+                                                    <a href=<%= require("./img/photos/product-03.jpg") %> class="o-box js-productThumb">
+                                                        <img src=<%= require("./img/photos/product-thumb-03.jpg") %> alt="">
+                                                    </a>
+                                                </li>                                                
+                                            </ul>
+                                        </div>
+                                        
+                                        <div class="glide__arrows" data-glide-el="controls">
+                                            <button class="glide__arrow glide__arrow--left icon-chevron-left" data-glide-dir="<"></button>
+                                            <button class="glide__arrow glide__arrow--right icon-chevron-right" data-glide-dir=">"></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+    <% include ./src/includes/treatment %>
+    <% include ./src/includes/footer %>
+    
+    </div>
+
+</body>
+</html>

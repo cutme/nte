@@ -1,0 +1,28 @@
+.c-experience {
+
+    .o-article {
+        
+        @media ( min-width: $tablet_portrait + 1px ) {
+            padding-right: 60px;
+        }
+
+        h4 {
+            border-bottom-color: $c-brown-02;
+        }
+    
+        p {
+            font-size: rem(30);
+        }
+    }
+    
+    .o-btn {
+        margin-top: 40px;
+    }
+    
+    .o-section {
+        
+        @media ( min-width: $tablet_portrait + 1px ) {
+            display: flex;
+        }
+    }
+}

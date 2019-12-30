@@ -1,0 +1,33 @@
+.c-about {
+    background: {
+        image: url(../img/bg/wood.jpg);
+        repeat: no-repeat;
+        position: center;
+        size: cover;
+    }
+    
+    h4 {
+        border-bottom-color: $c-brown-03 !important;
+    }
+    
+    .o-article {
+        color: white;
+        
+        @media ( min-width: $tablet_portrait + 1px ) {
+            column-count: 2;
+            column-gap: 50px;        	
+        }
+    
+        h4 {
+            border-bottom-color: $c-gray-02
+        }
+        
+        p {
+            font-size: rem(18);
+        }
+    }
+    
+    .o-sticker {
+        margin-bottom: 40px;
+    }
+}

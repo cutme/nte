@@ -1,0 +1,53 @@
+.c-grid {
+    @extend %flex;
+    @extend %flex-wrap;
+    margin: 0 -20px;
+    width: calc(100% + 40px);
+    overflow: hidden;
+    
+    @media ( max-width: $base + px ) {
+        width: 100%; 
+        margin: 0;  
+    }
+    
+    &__item {
+        @extend %flex;
+        @extend %flex-column;
+        @extend %flex-spacebetween;
+        //width: 33%;
+        width: calc(100% / 3);
+        padding: 30px 50px;
+        //padding: 30px grid(50);
+        text-align: justify;
+        
+        @media ( max-width: $base + px ) {
+        	padding: 30px 25px 0 25px;
+        }
+        
+        @media ( max-width: $tablet + px ) {
+        	padding: 30px 15px 0 15px;
+        }
+        
+        @media ( max-width: $tablet_portrait + px ) {
+        	width: 50%;
+        	
+        }
+    }
+    
+    .o-lead {
+        text-align: left;
+
+        &--second {
+            margin-bottom: .3em;
+        }
+        
+        &--third {
+            margin-bottom: .5em;
+            //white-space: nowrap;
+        }
+    }
+    
+    .o-more {
+        padding-top: 20px;
+    }
+}

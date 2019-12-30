@@ -1,0 +1,19 @@
+.o-lead {
+    line-height: 1.2em;
+    text-transform: uppercase;
+
+    &--first {
+        font: {
+            size: rem(40);
+            weight: $bold;
+        }
+    }
+    
+    &--second {
+        @extend %lead--second;
+    }
+    
+    &--third {
+        font-size: rem(16);
+    }
+}

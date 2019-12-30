@@ -1,0 +1,32 @@
+.c-product {
+    
+    &__details {
+        margin-bottom: 30px;
+        text-align: left;
+        
+        th {
+            padding-right: 30px;
+            font-weight: $bold;
+        }
+        
+        th, td {
+            padding: {
+                top: 5px;
+                bottom: 5px;
+            }
+        }
+    }
+    
+    .o-article {
+        margin-bottom: 40px;
+    }
+
+    .o-cols {
+        width: calc(100% + 20px);
+        margin: 0 -10px;
+        
+        &__item {
+            padding: 0 10px;
+        }
+    }
+}

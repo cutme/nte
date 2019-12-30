@@ -1,0 +1,35 @@
+.c-footer {
+    @media ( max-width: $tablet + px ) {
+        width: $tablet_portrait + px;
+    }
+
+    &__address {
+        font-size: rem(18);
+        
+        @media ( max-width: $tablet + px ) {
+        	display: flex;
+        	justify-content: space-between;
+        }
+    
+        p {
+            margin-bottom: 1.5em;
+            
+            //&:not(:last-of-type) {
+              //  @media ( max-width: $tablet + px ) {
+                //    margin-right: 40px;
+                //}
+            //}
+        }
+        
+        strong {
+            font-weight: $regular;
+        }
+    }
+
+    .o-section {
+        
+        @media ( min-width: $tablet + 1px ) {
+        	display: flex;
+        }
+    }
+}

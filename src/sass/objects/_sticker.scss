@@ -1,0 +1,59 @@
+.o-sticker {
+    @extend %flex;
+    @extend %flex-y;
+    @extend %flex-wrap;
+    @extend %rel;
+    width: 270px; height: 270px;
+    color: white;
+    
+    &:before {
+        @extend %abs-pseudo; z-index: -1;
+        left: 0; top: 0;
+        font: {
+            family: $icomoon; 
+            size: rem(270);
+        }
+        line-height: 1;
+        filter: drop-shadow( 0 22px 22px rgba(0, 0, 0, .5));
+        content: "\e900";
+        color: $c-green-01;
+    }
+
+    ul {
+        width: 100%;
+        text-align: center;
+
+        li {
+            display: block;
+            width: 100%;
+            color: white;
+            
+            &:nth-child(1) {
+                line-height: 1em;
+                font: {
+                    size: rem(60);
+                    weight: $bold;
+                }
+            }
+            
+            &:nth-child(2) {
+                text-transform: uppercase;
+                font: {
+                    size: rem(18);
+                    weight: $bold;
+                }
+                
+                span {
+                    border-bottom: 3px solid white;
+                    padding-bottom: 4px;
+                }
+            }
+            
+            &:nth-child(3) {
+                padding: 10px;
+                font-size: rem(18);
+            }
+        }
+    }
+
+}

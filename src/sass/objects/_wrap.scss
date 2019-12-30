@@ -1,0 +1,25 @@
+.o-wrap {
+	max-width: $base + px;
+	margin: 0 auto;	
+	padding: {
+    	left: 30px;
+    	right: 30px;
+	}
+	
+/*
+	&--narrow {
+    	width: 980px;
+	
+}
+
+	@media ( max-width: $base + px ) {
+	    width: 100%;
+	}
+*/
+    @media ( max-width: + $smartphone_portrait + px ) {
+        padding: {
+        	left: 15px;
+        	right: 15px;
+    	}
+    }
+}

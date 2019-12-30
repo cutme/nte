@@ -1,0 +1,23 @@
+.c-treatment {
+    background: {
+        image: url(../img/bg/greentree.jpg);
+        repeat: no-repeat;
+        position: center;
+        size: cover;
+    }
+    
+    .o-article {
+        color: white;
+    
+        h4 {
+            border-bottom-color: $c-gray-02
+        }
+    }
+    
+    .o-section {
+        
+        @media ( min-width: $tablet_portrait + 1px ) {
+            width: 50%;
+        }
+    }
+}

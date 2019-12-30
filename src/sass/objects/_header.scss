@@ -1,0 +1,41 @@
+.o-header {
+    padding: 40px 0 20px 0;
+    
+    &--withback {
+        @extend %flex;
+        align-items: baseline;
+    }
+
+    h1 {
+        @extend %lead--second;
+        min-width: 280px;
+        display: inline-block;
+        border-bottom: 5px solid $c-black-01;
+        
+        span {
+            text-transform: none;
+        }
+    }
+    
+    .back {
+        margin: 0 0 0 auto;
+        font-weight: $bold;
+    
+        &:before {
+            margin: 0 5px 0 0;
+            vertical-align: middle;
+            font: {
+                family: $icomoon;
+            }
+            content: "\e901";
+        }
+        
+        &:hover {
+            .desktop & {
+                span {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,18 @@
+.c-lang {
+    @extend %abs;
+    right: 0; top: 10px;
+    
+    @media ( max-width: $base + px ) {
+    	right: 30px;
+    }
+    
+    ul {
+        @extend %flex;
+        
+        li {
+            &:not(:first-child) {
+                margin-left: 5px;
+            }
+        }
+    }
+}

@@ -1,0 +1,49 @@
+.o-article {
+    
+    h4 {
+        @extend %lead--second;
+        min-width: 280px;
+        display: inline-block;
+        border-bottom: 5px solid transparent;
+    }
+    
+    iframe {
+        width: 100%;
+        margin-bottom: 40px;
+    }
+    
+    img {
+        border: 1px solid $c-gray-01;
+    }
+
+    p {
+        &:not(:last-of-type) {
+            margin-bottom: 2em;
+        }
+    }
+    
+    & > ul {
+        margin-bottom: 2em;
+
+        & > li {
+            @extend %rel;
+            margin-bottom: .4em;
+            padding-left: 45px;
+            font: {
+                size: rem(22);
+                weight: $bold;
+            }
+            
+            &:before {
+                @extend %abs-pseudo;
+                left: 0; top: 0;
+                font: {
+                    family: $icomoon;
+                    size: rem(26);
+                }
+                color: $c-brown-03;
+                content: "\e903";
+            }
+        }
+    }
+}

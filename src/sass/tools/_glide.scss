@@ -1,0 +1,29 @@
+.glide { 
+    height: 100%;
+
+    &__slides,
+    &__track {
+        height: 100%;
+    }
+       
+    &__slide {
+        
+        &--active {
+            article {
+            
+                & > p {
+                    transition: all 350ms ease-out;
+                    
+                    & + p {
+                        transition-delay: 250ms;
+                    }
+                }
+            
+                p {
+                    opacity: 1 !important;
+                    transform: translate3d(0, 0, 0) !important;
+                }
+            }
+        }
+    }
+}

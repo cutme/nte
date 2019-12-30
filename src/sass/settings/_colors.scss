@@ -1,0 +1,21 @@
+$c-black-01:   black;
+
+$c-brown-01:   #5a4a42;
+$c-brown-02:   #726659;
+$c-brown-03:   #c1a386;
+$c-brown-04:   #c2b59b;
+
+$c-green-01:   #05A081;
+
+$c-gray-01:    #edede8;
+$c-gray-02:    #edede8;
+$c-gray-03:    #e8e8e8;
+
+$c-green-01:   #648560;
+
+
+$c-primary: $c-brown-01;
+
+:root {
+  --primary-color: #{$c-primary};
+}
