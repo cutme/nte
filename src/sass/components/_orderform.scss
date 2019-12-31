@@ -6,16 +6,29 @@
         font-size: rem(18);
     }
     
+    .o-btn {
+        @media ( max-width: $smartphone_portrait + px ) {
+        	width: 100%;
+        	text-align: center;
+        }
+    }
+    
     .form-group {
         padding: 0 5px;
         
         &--select {
             flex: 100px 0 0;
         }
+        
+        
     }
     
     .form-row {
         margin: 0 -5px;
+        
+        @media ( max-width: $smartphone_portrait + px ) {
+        	display: block;
+        }
         
         &--submit {
             .form-group {

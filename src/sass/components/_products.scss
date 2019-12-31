@@ -5,6 +5,14 @@
         padding: 0 15px 30px 15px;
         text-align: center;
         
+        @media ( max-width: $tablet_portrait + px ) {
+        	width: calc(100% / 3);
+        }
+        
+        @media ( max-width: $smartphone + px ) {
+            width: calc(100% / 2);
+        }
+        
         figure {
             @extend %rel;
             @extend %anim;
@@ -55,8 +63,14 @@
     .o-wrap {
         @extend %flex;
         @extend %flex-wrap;
-        width: calc(100% + 30px);
+    	width: calc(100% + 30px);
         margin: 0 -15px;
+    
+        @media ( max-width: $tablet + px ) {
+        	padding: 0;
+        }
+        
+        
     }
 
 }

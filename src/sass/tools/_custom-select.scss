@@ -46,12 +46,7 @@
         width: 100%;
         padding-left: 20px;
         padding-right: 30px;
-        //letter-spacing: .8px;
         font-size: rem(18);
-
-        @media screen and ( max-width: + $smartphone_portrait + px ) {
-            font-size: rem(12);
-        }
     }
     
     .custom-select-panel {

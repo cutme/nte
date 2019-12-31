@@ -10,6 +10,10 @@
         margin: 0;  
     }
     
+    @media ( max-width: $smartphone_portrait + px ) {
+        padding-top: 30px;
+    }
+    
     &__item {
         @extend %flex;
         @extend %flex-column;
@@ -30,7 +34,11 @@
         
         @media ( max-width: $tablet_portrait + px ) {
         	width: 50%;
-        	
+        }
+        
+        @media ( max-width: $smartphone_portrait + px ) {
+            width: 100%;
+            padding-top: 0;
         }
     }
     

@@ -8,7 +8,6 @@ import customSelect from 'custom-select';
     const Helpers = function() {
         return {
 	        debounce: debounce,
-	        detach: detach,
         	isInView: isInView,
         	scrollTo: scrollTo
         };
@@ -27,16 +26,6 @@ import customSelect from 'custom-select';
 	        timeout = setTimeout(later, wait);
 	        if (callNow) func.apply(context, args);
 	    };
-	};
-    
-	const detach = function(node, target) {
-		let parent = node.parentNode;
-		let next = node.nextSibling;
-	
-		if (!parent) { return; }
-		
-		parent.removeChild(node);	// Detach node from DOM.		
-		target.append(node, next);	// Append
 	};
     
     const isInView = function(el) {

@@ -9,6 +9,10 @@
     	height: calc(100vh - 130px);
     }
     
+    @media ( max-width: $smartphone + px ) {
+        height: 400px;   
+    }
+    
     &__text {
         @extend %abs;
         @extend %flex;
@@ -23,7 +27,15 @@
         	padding: 40px 30px 20px 30px;
         }
         
+        @media ( max-width: $smartphone_portrait + px ) {
+            padding-top: 0;
+        }
+        
         article {
+            
+            @media ( max-width: $smartphone_portrait + px ) {
+                text-align: center;
+            }
         
             & > p {
                 font-size: rem(45);
@@ -35,8 +47,14 @@
                 	font-size: base(45);
                 }
                 
+                @media ( max-width: $smartphone + px ) {
+                	font-size: rem(28);
+                }
+                
                 & + p {
-                    padding-left: 30px;
+                    @media ( min-width: $smartphone_portrait + 1px ) {
+                        padding-left: 30px;
+                    }
                 }            
             }
         }
@@ -46,6 +64,17 @@
         @media ( max-width: $base + px ) {
         	transform: scale3d(.8, .8, .8);
         }
+        
+        @media ( max-width: $tablet_portrait + px ) {
+    	    margin: 0 0 -50px -60px;
+    	    transform: scale3d(.6, .6, .6);
+        }
+        
+        @media ( max-width: $smartphone_portrait + px ) {
+    	    margin: 0 0 -70px -80px;
+    	    transform: scale3d(.5, .5, .5);
+        }
+        
     }
     
     .o-wrap {

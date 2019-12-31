@@ -9,10 +9,12 @@ document.addEventListener('DOMContentLoaded',function() {
           menu = document.getElementsByClassName('js-menu')[0],
           hamburger = document.getElementsByClassName('js-hamburger')[0],
           parent = el.getElementsByTagName('li');
+          
 
     const init = function() {
 
         let ww = 0;
+        let cwh;
         
 /*
         const searchform = document.getElementById('searchform'),
@@ -26,7 +28,17 @@ document.addEventListener('DOMContentLoaded',function() {
 
                 hideMenu();
             }
-        }
+        };
+        
+        const checkWindowHeight = function() {
+            wh = window.innerHeight;           
+            
+            if (wh <= menu.clientHeight) {
+				el.classList.add('is-block');
+            } else {
+	            el.classList.remove('is-block');
+            }
+        };
         
         const hideMenu = function() {
 
@@ -46,6 +58,8 @@ document.addEventListener('DOMContentLoaded',function() {
             for (let i = 0; i < parent.length; i ++) {
                 parent[i].classList.remove('is-active');
             }
+            
+            window.removeEventListener('resize', cwh);
         };
 
         const showMenu = function(e) {
@@ -68,6 +82,9 @@ document.addEventListener('DOMContentLoaded',function() {
                 }, 100);
 */
             }
+            
+            checkWindowHeight();
+            cwh = window.addEventListener('resize', checkWindowHeight);    
         };
 
         
@@ -94,15 +111,27 @@ document.addEventListener('DOMContentLoaded',function() {
                     } else {
                         item.classList.add('is-active');
                     }
+                } else if (item.classList.contains('js-goto')) {
+                    
+                    let src = item.getElementsByTagName('a')[0].getAttribute('href');
+                    let obj = document.getElementById( src.slice(1, src.length) );
+                    let window_pos = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+                    let target = window_pos + obj.getBoundingClientRect().top - 90;
+                    
+                    hideMenu();
+                    cutme.Helpers.scrollTo(target, 1, 0);
+                    
                 } else {
                     let url = item.getElementsByTagName('a')[0].getAttribute('href');
                     window.open(url, '_self');
                     hideMenu();
                 }
+                
+                checkWindowHeight();
 
-                e.preventDefault() ? e.preventDefault() : e.preventDefault = false;
+                //e.preventDefault() ? e.preventDefault() : e.preventDefault = false;
             }
-        }
+        };
 
 
         for (let j = 0; j < parent.length; j++) {

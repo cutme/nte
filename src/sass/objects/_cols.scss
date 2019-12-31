@@ -1,9 +1,9 @@
 .o-cols {
 	width: 100%;
     
-    @media ( min-width: $tablet_portrait + 1px ) {
+    //@media ( min-width: $tablet_portrait + 1px ) {
     	display: flex;
-    }
+    //}
 
     &__item {
         @extend %rel;

@@ -32,6 +32,7 @@
         
         &:after {
             @extend %abs-pseudo;
+            @extend %abs-y;
             right: 10px;
             font: {
                 family: $icomoon;

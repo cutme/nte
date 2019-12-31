@@ -11,6 +11,11 @@
 	@media ( min-width: $tablet_portrait + 1px ) {
         display: none;
     }
+    
+    @media ( max-width: $tablet_portrait + px ) {
+        position: absolute;
+        right: 20px;
+    }
 
     &:after, &:before {
         @extend %abs;
@@ -25,7 +30,6 @@
 	    left: 0;
 	    transform-origin: right;
         top: 100%;
-        width: 12px;
     }
 
     &:before {

@@ -12,12 +12,20 @@
     	 
     	 .o-logo {
         	 height: 70px;
+        	 
+        	 @media ( max-width: $smartphone_portrait + px ) {
+        	 	height: 60px;
+        	 }
     	 }
 	 }
 	 
 	 .o-logo {
     	 height: 104px;
     	 margin-right: 20px;
+    	 
+    	 @media ( max-width: $smartphone_portrait + px ) {
+    	 	height: 60px;
+    	 }
 
     	 img {
             height: 100%;

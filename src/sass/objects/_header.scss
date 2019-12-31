@@ -1,6 +1,10 @@
 .o-header {
     padding: 40px 0 20px 0;
     
+    @media ( max-width: $smartphone + px ) {
+    	flex-direction: column;
+    }
+    
     &--withback {
         @extend %flex;
         align-items: baseline;
@@ -18,8 +22,11 @@
     }
     
     .back {
-        margin: 0 0 0 auto;
         font-weight: $bold;
+        
+        @media ( min-width: $smartphone + 1px ) {
+        	margin: 0 0 0 auto;
+        }
     
         &:before {
             margin: 0 5px 0 0;

@@ -34,7 +34,16 @@ document.addEventListener('DOMContentLoaded',function() {
             gap: 10,
             perView: 4,
             breakpoints: {
+        		1024: {
+        			perView: 3
+        		},
         		768: {
+        			perView: 6
+        		},
+        		640: {
+        			perView: 4
+        		},
+        		500: {
         			perView: 3
         		}
         	},

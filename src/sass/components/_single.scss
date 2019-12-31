@@ -1,11 +1,21 @@
 .c-single {
     
     .o-article {
-        //padding-top: 20px;
         font-weight: $regular;
     }
     
     .o-section {
-        padding-top: 20px;
+        
+        @media ( min-width: $smartphone_portrait + 1px ) {
+	        padding-top: 20px;
+        }
+    }
+    
+    .o-wrap {
+        .o-wrap {
+            @media ( max-width: $tablet + px ) {
+            	padding: 0;
+            }
+        }
     }
 }

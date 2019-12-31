@@ -10567,7 +10567,16 @@ document.addEventListener('DOMContentLoaded', function () {
       gap: 10,
       perView: 4,
       breakpoints: {
+        1024: {
+          perView: 3
+        },
         768: {
+          perView: 6
+        },
+        640: {
+          perView: 4
+        },
+        500: {
           perView: 3
         }
       }
@@ -10629,8 +10638,7 @@ document.addEventListener('DOMContentLoaded', function () {
 __webpack_require__.r(__webpack_exports__);
 
 document.addEventListener('DOMContentLoaded', function () {
-  const btnGoTo = document.getElementsByClassName('js-goto'),
-        topbar = document.getElementsByClassName('js-top')[0];
+  const btnGoTo = document.getElementsByClassName('js-goto');
 
   const speed_calculate = function (target) {
     let base_speed = 30,
@@ -10661,7 +10669,6 @@ document.addEventListener('DOMContentLoaded', function () {
       document.body.removeAttribute('style');
       let target = window_pos + obj.getBoundingClientRect().top - offset;
       cutme.Helpers.scrollTo(target, speed_calculate(target), offset);
-      topbar.classList.add('is-out');
     } else {
       window.open(src, '_self');
     }
@@ -10699,7 +10706,6 @@ const scrollPlugin = gsap_all__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"];
   const Helpers = function () {
     return {
       debounce: debounce,
-      detach: detach,
       isInView: isInView,
       scrollTo: scrollTo
     };
@@ -10721,19 +10727,6 @@ const scrollPlugin = gsap_all__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"];
       timeout = setTimeout(later, wait);
       if (callNow) func.apply(context, args);
     };
-  };
-
-  const detach = function (node, target) {
-    let parent = node.parentNode;
-    let next = node.nextSibling;
-
-    if (!parent) {
-      return;
-    }
-
-    parent.removeChild(node); // Detach node from DOM.		
-
-    target.append(node, next); // Append
   };
 
   const isInView = function (el) {
@@ -10867,6 +10860,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const init = function () {
     let ww = 0;
+    let cwh;
     /*
             const searchform = document.getElementById('searchform'),
             	  searchform__content = document.getElementById('searchform__content');
@@ -10877,6 +10871,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
       if (ww > 768) {
         hideMenu();
+      }
+    };
+
+    const checkWindowHeight = function () {
+      wh = window.innerHeight;
+
+      if (wh <= menu.clientHeight) {
+        el.classList.add('is-block');
+      } else {
+        el.classList.remove('is-block');
       }
     };
 
@@ -10896,6 +10900,8 @@ document.addEventListener('DOMContentLoaded', function () {
       for (let i = 0; i < parent.length; i++) {
         parent[i].classList.remove('is-active');
       }
+
+      window.removeEventListener('resize', cwh);
     };
 
     const showMenu = function (e) {
@@ -10912,6 +10918,9 @@ document.addEventListener('DOMContentLoaded', function () {
          }, 100);
         */
       }
+
+      checkWindowHeight();
+      cwh = window.addEventListener('resize', checkWindowHeight);
     };
 
     window.addEventListener('resize', checkWindowWidth);
@@ -10930,13 +10939,20 @@ document.addEventListener('DOMContentLoaded', function () {
           } else {
             item.classList.add('is-active');
           }
+        } else if (item.classList.contains('js-goto')) {
+          let src = item.getElementsByTagName('a')[0].getAttribute('href');
+          let obj = document.getElementById(src.slice(1, src.length));
+          let window_pos = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+          let target = window_pos + obj.getBoundingClientRect().top - 90;
+          hideMenu();
+          cutme.Helpers.scrollTo(target, 1, 0);
         } else {
           let url = item.getElementsByTagName('a')[0].getAttribute('href');
           window.open(url, '_self');
           hideMenu();
         }
 
-        e.preventDefault() ? e.preventDefault() : e.preventDefault = false;
+        checkWindowHeight(); //e.preventDefault() ? e.preventDefault() : e.preventDefault = false;
       }
     };
 
