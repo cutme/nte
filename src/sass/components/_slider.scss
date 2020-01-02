@@ -7,6 +7,7 @@
     
     @media ( min-width: $base + 1px ) {
     	height: calc(100vh - 130px);
+    	max-height: 800px;
     }
     
     @media ( max-width: $smartphone + px ) {
